@@ -74,20 +74,20 @@ To test PMTUD functionality from your system:
 
 ### Linux/macOS
 ```bash
-# Test with a specific packet size (replace example.com with test site)
-ping -M do -s 1472 example.com
+# Test with a specific packet size (replace <test-site> with your target hostname/IP)
+ping -M do -s 1472 <test-site>
 
 # Trace path MTU
-tracepath example.com
+tracepath <test-site>
 ```
 
 ### Windows
 ```cmd
-# Test with specific packet size and Don't Fragment bit
-ping -f -l 1472 example.com
+# Test with specific packet size and Don't Fragment bit (replace <test-site> with target)
+ping -f -l 1472 <test-site>
 
 # Test different sizes
-ping -f -l 1400 example.com
+ping -f -l 1400 <test-site>
 ```
 
 ### Expected Behavior

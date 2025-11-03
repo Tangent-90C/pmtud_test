@@ -1,0 +1,57 @@
+# IPv6 MTU Discovery Tool Configuration Example
+
+# Network configuration
+network:
+  timeout_ms: 5000        # Network operation timeout in milliseconds
+  max_retries: 3          # Maximum number of retry attempts
+  probe_interval_ms: 100  # Interval between probe packets in milliseconds
+
+# MTU configuration
+mtu:
+  min_size: 68           # Minimum MTU size to test
+  max_size: 1500         # Maximum MTU size to test
+
+# TCP configuration
+tcp:
+  default_port: 80           # Default TCP port for connections
+  default_control_port: 8080 # Default control port for MSS verification
+  default_test_mss: 1460     # Default MSS value for testing (intentionally large)
+
+# MSS verification configuration
+mss_verification:
+  enable_integrity_check: false  # Enable MSS integrity verification by default
+  session_timeout_ms: 30000      # Session timeout in milliseconds (30 seconds)
+  max_sessions: 10               # Maximum concurrent verification sessions
+  control_port: 8080             # Port for control communication between client/server
+  test_mss: 1460                 # MSS value to use for tampering detection tests
+  retry_attempts: 3              # Number of retry attempts for failed verifications
+  handshake_timeout_ms: 5000     # Timeout for TCP handshake operations (5 seconds)
+
+# Target unreachability detection configuration
+unreachability_detection:
+  enable_pre_validation: true          # Enable pre-validation reachability checks
+  pre_validation_timeout_ms: 5000      # Timeout for pre-validation checks (5 seconds)
+  pre_validation_retries: 2            # Number of retries for pre-validation
+  consecutive_failure_threshold: 3     # Consecutive failures to trigger detection
+  total_failure_threshold: 0.8         # Total failure rate threshold (80%)
+  timeout_threshold_ms: 10000          # Timeout threshold for detection (10 seconds)
+  enable_pattern_analysis: true        # Enable response pattern analysis
+  min_probes_for_analysis: 5           # Minimum probes required for pattern analysis
+  confidence_threshold: 0.7            # Confidence threshold for detection (70%)
+  cache_ttl_seconds: 300               # Cache TTL for reachability results (5 minutes)
+  max_cache_entries: 100               # Maximum number of cache entries
+
+  # Advanced configuration options (usually managed automatically)
+  # These parameters can be overridden for specific network conditions
+  # dynamic_adjustment: true           # Enable automatic parameter adjustment based on network conditions
+  # adjustment_sensitivity: 0.3        # Sensitivity for automatic adjustments (0.0-1.0)
+  # min_samples_for_adjustment: 10     # Minimum samples before adjusting parameters
+
+# Logging configuration
+logging:
+  level: "info"                              # Log level: debug, info, warn, error
+  verbose: false                             # Enable verbose output
+  file_enabled: false                        # Enable logging to file
+  file_path: "logs/ipv6-mtu-discovery.log"  # Path for log file
+  max_file_size: 10485760                    # Maximum log file size in bytes (10MB)
+  max_backups: 5                             # Maximum number of backup log files

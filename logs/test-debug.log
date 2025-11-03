@@ -1,0 +1,9 @@
+2025-11-03 02:53:11.481 [DEBUG] [app] This is a debug message
+2025-11-03 02:53:11.481 [INFO] [app] This is an info message
+2025-11-03 02:53:11.481 [WARN] [app] This is a warning message
+2025-11-03 02:53:11.481 [ERROR] [app] This is an error message
+2025-11-03 02:54:42.129 [DEBUG] [app] This is a debug message
+2025-11-03 02:54:42.129 [INFO] [app] This is an info message
+2025-11-03 02:54:42.129 [WARN] [app] This is a warning message
+2025-11-03 02:54:42.129 [ERROR] [app] This is an error message
+2025-11-03 02:54:42.129 [INFO] [app] Structured logging test fields={operation=logging_test, count=42, component=test}

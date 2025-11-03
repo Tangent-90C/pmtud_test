@@ -1,0 +1,2 @@
+2025-11-03 02:54:42.129 [INFO] [test] Starting probe operation fields={action=start, target=2400:3200::1, probe_type=mtu}
+2025-11-03 02:54:42.129 [DEBUG] [test] Network operation fields={target=2400:3200::1, port=80, operation=connect, type=network}
